@@ -2974,7 +2974,7 @@ gum_duk_native_function_invoke (GumDukNativeFunction * self,
       v = (GumFFIValue *) (avalues + offset);
 
       if (!gum_duk_get_ffi_value (ctx, argv_index + i, t, core, v))
-        _gum_duk_throw (ctx, "invalid argument value");
+        _gum_duk_throw (ctx, "invalid argument value (index: %d)", i);
       avalue[i] = v;
 
       offset += t->size;
